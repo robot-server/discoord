@@ -3,3 +3,6 @@ version: 0
 author: Seokjin Yoon
 description: Share your coordinates on Discord.
 main: com.sysbot32.discoord.Main
+commands:
+  discoord:
+    description: 좌표를 Discord에 공유합니다.
