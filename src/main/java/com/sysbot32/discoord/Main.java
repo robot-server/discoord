@@ -6,7 +6,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
-        saveDefaultConfig();
+        CommonConfig.config = getConfig();
+        CommonConfig.getConfig().options().copyDefaults(true);
+        saveConfig();
+
         getCommand("discoord").setExecutor(new DiscoordCommandExecutor());
     }
 }
