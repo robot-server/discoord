@@ -16,7 +16,9 @@ public class DiscoordCommandExecutor implements CommandExecutor {
         if ("add".equalsIgnoreCase(args[0])) {
             if (sender instanceof final Player player) {
                 final Location location = player.getLocation();
-                sender.sendMessage(player.getName() + " " + args[1] + " " + location.getX() + " " + location.getY() + " " + location.getZ());
+                final String message = args[1] + ": " + location.getX() + " / " + location.getY() + " / " + location.getZ();
+                sender.sendMessage(message);
+                new DiscordWebhook().execute(message);
             } else {
                 return false;
             }
