@@ -1,5 +1,7 @@
-package com.sysbot32.discoord;
+package com.sysbot32.discoord.commands;
 
+import com.sysbot32.discoord.DiscordWebhook;
+import com.sysbot32.discoord.DiscordWebhookRequest;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
