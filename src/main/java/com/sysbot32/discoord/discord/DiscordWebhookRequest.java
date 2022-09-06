@@ -1,4 +1,4 @@
-package com.sysbot32.discoord;
+package com.sysbot32.discoord.discord;
 
 import com.google.gson.JsonObject;
 import lombok.Builder;

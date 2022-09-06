@@ -1,4 +1,4 @@
-package com.sysbot32.discoord;
+package com.sysbot32.discoord.discord;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
