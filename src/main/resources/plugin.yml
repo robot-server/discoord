@@ -1,5 +1,5 @@
 name: Discoord
-version: 0
+version: 0.1
 author: Seokjin Yoon
 description: Share your coordinates on Discord.
 main: com.sysbot32.discoord.Main
