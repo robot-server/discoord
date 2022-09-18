@@ -8,4 +8,8 @@ public class Config {
     public static FileConfiguration getConfig() {
         return config;
     }
+
+    public static String getWebhookUrl() {
+        return config.getString("webhookUrl");
+    }
 }

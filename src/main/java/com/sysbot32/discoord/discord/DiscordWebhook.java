@@ -10,7 +10,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class DiscordWebhook {
-    final private String webhookUrl = Config.getConfig().getString("webhookUrl");
+    private final String webhookUrl = Config.getWebhookUrl();
 
     public void execute(final DiscordWebhookRequest request) {
         try {
