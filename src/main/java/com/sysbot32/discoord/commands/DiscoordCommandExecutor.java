@@ -13,20 +13,14 @@ import javax.annotation.Nonnull;
 public class DiscoordCommandExecutor implements CommandExecutor {
     @Override
     public boolean onCommand(@Nonnull final CommandSender sender, @Nonnull final Command command, @Nonnull final String label, @Nonnull final String[] args) {
-        if (args.length < 2) {
+        if (args.length != 1) {
+            sender.sendMessage("Usage: /discoord <name>");
             return false;
         }
 
-        if ("add".equalsIgnoreCase(args[0])) {
-            return this.add(sender, command, label, args);
-        }
-        return false;
-    }
-
-    private boolean add(@Nonnull final CommandSender sender, @Nonnull final Command command, @Nonnull final String label, @Nonnull final String[] args) {
         if (sender instanceof final Player player) {
             final Location location = player.getLocation();
-            final String message = args[1] + ": " + location.getX() + " / " + location.getY() + " / " + location.getZ();
+            final String message = args[0] + ": " + location.getX() + " / " + location.getY() + " / " + location.getZ();
             sender.sendMessage(message);
             new DiscordWebhook().execute(DiscordWebhookRequest.builder()
                     .content(message)
