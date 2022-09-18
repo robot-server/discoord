@@ -1,7 +1,9 @@
 package com.sysbot32.discoord.discord;
 
 import com.sysbot32.discoord.Config;
+import org.bukkit.Bukkit;
 
+import javax.annotation.Nonnull;
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,7 +14,7 @@ import java.nio.charset.StandardCharsets;
 public class DiscordWebhook {
     private final String webhookUrl = Config.getWebhookUrl();
 
-    public void execute(final DiscordWebhookRequest request) {
+    public void execute(@Nonnull final DiscordWebhookRequest request) {
         try {
             HttpsURLConnection conn = (HttpsURLConnection) new URL(webhookUrl).openConnection();
             conn.setRequestMethod("POST");
@@ -24,7 +26,7 @@ public class DiscordWebhook {
             try {
                 conn.getInputStream();
             } catch (IOException e) {
-                System.err.println(new BufferedReader(new InputStreamReader(conn.getErrorStream())));
+                Bukkit.getConsoleSender().sendMessage(new BufferedReader(new InputStreamReader(conn.getErrorStream())).toString());
             }
         } catch (IOException e) {
             e.printStackTrace();
