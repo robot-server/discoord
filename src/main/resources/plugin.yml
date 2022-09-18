@@ -4,5 +4,7 @@ author: Seokjin Yoon
 description: Share your coordinates on Discord.
 main: com.sysbot32.discoord.Main
 commands:
+  coord:
+    description: 좌표를 채팅으로 공유합니다.
   discoord:
     description: 좌표를 Discord에 공유합니다.
