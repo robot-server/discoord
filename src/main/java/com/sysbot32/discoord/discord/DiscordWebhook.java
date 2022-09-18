@@ -1,6 +1,6 @@
 package com.sysbot32.discoord.discord;
 
-import com.sysbot32.discoord.CommonConfig;
+import com.sysbot32.discoord.Config;
 
 import javax.net.ssl.HttpsURLConnection;
 import java.io.BufferedReader;
@@ -10,7 +10,7 @@ import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 public class DiscordWebhook {
-    final private String webhookUrl = CommonConfig.getConfig().getString("webhookUrl");
+    final private String webhookUrl = Config.getConfig().getString("webhookUrl");
 
     public void execute(final DiscordWebhookRequest request) {
         try {
